@@ -42,7 +42,7 @@ export const authorize = ({ password, email }) => {
         return res;
       }
     })
-    .catch(err => console.log(err))
+
 };
 
 export const getContent = (token) => {
@@ -53,6 +53,6 @@ export const getContent = (token) => {
       'Authorization': `Bearer ${token}`,
     }
   })
-    .then(res => res.json())
+    .then(checkResponse)
     .then(data => data)
 }

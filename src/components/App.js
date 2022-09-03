@@ -52,10 +52,6 @@ function App() {
     setIsError(false);
   }
 
-  //Закрытие на Esc
-
-
-
   //Открытие картинки на весь экран
 
   const handleCardClick = (card) => {
@@ -150,6 +146,7 @@ function App() {
           setIsError(true);
         }
       })
+      .catch(() => { setIsError(true) })
       .catch((err) => console.log(`${err}`))
   }
 
@@ -168,7 +165,8 @@ function App() {
       .then(() => {
         setIsAuth(false);
       })
-      .catch(err => console.log(err));
+      .catch(() => { setIsError(true) })
+      .catch((err) => console.log(`${err}`))
   }
 
   //Проверка на совпадение текущего токена с отправленным ранее при длит нахождении на стр
@@ -192,6 +190,7 @@ function App() {
             history.push('/');
           }
         })
+        .catch((err) => console.log(`${err}`))
     }
   }
 
