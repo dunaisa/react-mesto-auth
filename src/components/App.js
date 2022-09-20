@@ -193,8 +193,9 @@ function App() {
         .catch((err) => console.log(`${err}`))
     }
   }
-
+  console.log(localStorage)
   function signOut() {
+    console.log(localStorage)
     localStorage.removeItem('token');
     setLoggedIn(false);
     history.push('/sign-up');
